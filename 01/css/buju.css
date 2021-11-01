@@ -1,0 +1,85 @@
+/* 清除页面 */	
+.container{
+	width: 100%;
+	height: 700px;
+	padding: 0px;
+	margin: 0px;
+	display: grid;
+	grid-template-columns: [h1]200px [h2] 100px [h3] auto [h4] 200px [h5] 100px [h6];
+	grid-template-rows: [l1] 40px [l2] 3fr [l3] 2fr [l4] 1fr [l5];
+}
+
+.title{
+	display: grid;
+	grid-column-start: h3;
+	grid-column-end: h4;
+	justify-content: center;
+	align-self: center;
+	font-size: 30px;
+
+
+}
+.echart1{
+	display: grid;
+	grid-column-start: h1;
+	grid-column-end: h3;
+	grid-row-start: l2;
+	grid-row-end: l3;
+	border: 2px solid black;
+	
+
+}
+ p{
+	justify-self: center;
+	
+	
+}
+.echart2{
+	display: grid;
+	grid-column-start: h1;
+	grid-column-end: h3;
+	grid-row-start: l3;
+	grid-row-end: l4;
+	/* background-color: rgb(31, 31, 24); */
+	border: 2px solid black;
+
+
+}
+.echart3{
+	display: grid;
+	grid-column-start: h4;
+	grid-column-end: h6;
+	grid-row-start: l2;
+	grid-row-end: l3;
+	border: 2px solid black;
+
+}
+.echart4{
+	display: grid;
+	grid-column-start: h4;
+	grid-column-end: h6;
+	grid-row-start: l3;
+	grid-row-end: l4;
+	border: 2px solid black;
+	
+
+}
+.calender{
+	display: grid;
+	grid-column-start: h3;
+	grid-column-end: h4;
+	grid-row-start: l2;
+	grid-row-end: l4;
+	border: 2px solid black;
+	
+
+}
+.bottom{
+	display: grid;
+	grid-column-start: h1;
+	grid-column-end: h6;
+	grid-row-start: l4;
+	grid-row-end: l5;
+	background-color:black;
+
+}
