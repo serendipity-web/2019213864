@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课表作业一</title>
+    <link rel="stylesheet" href="../css/buju.css">
+    <link rel="stylesheet" href="../js/search.js">
+</head>
+<body>
+    <div class="container">
+        <div class="title"><h2>查看课表</h2></div>
+        <div class="course1">
+            <div class="item1-1">周一</div>
+            <div class="item1-2">周二</div>
+            <div class="item1-3">周三</div>
+            <div class="item1-4">周四</div>
+            <div class="item1-5">周五</div>
+            <div class="item1-6">周六</div>
+            <div class="item1-7">周日</div>
+        </div>
+        <div class="course2">
+            <div class="item2-1"></div>
+            <div class="item2-2">编译原理</div>
+            <div class="item2-3">人工智能</div>
+            <div class="item2-4"></div>
+            <div class="item2-5">操作系统</div>
+            <div class="item2-6"></div>
+            <div class="item2-7"></div>
+        </div>
+        <div class="course3">
+            <div class="item3-1">微机原理</div>
+            <div class="item3-2"></div>
+            <div class="item3-3">操作系统</div>
+            <div class="item3-4">习近平思想</div>
+            <div class="item3-5"></div>
+            <div class="item3-6"></div>
+            <div class="item3-7"></div>
+        </div>
+        <div class="course4">
+            <div class="item4-1"></div>
+            <div class="item4-2"></div>
+            <div class="item4-3">电影鉴赏</div>
+            <div class="item4-4">web程序设计</div>
+            <div class="item4-5"></div>
+            <div class="item4-6"></div>
+            <div class="item4-7"></div>
+        </div>
+        <div class="course5">
+            <div class="item5-1">专业英语</div>
+            <div class="item5-2">信息检索</div>
+            <div class="item5-3">微机原理</div>
+            <div class="item5-4">编译原理</div>
+            <div class="item5-5"></div>
+            <div class="item5-6"></div>
+            <div class="item5-7"></div>
+        </div>
+        <div class="course6">
+            <div class="item6-1"></div>
+            <div class="item6-2"></div>
+            <div class="item6-3">博弈思维</div>
+            <div class="item6-4"></div>
+            <div class="item6-5"></div>
+            <div class="item6-6"></div>
+            <div class="item6-7"></div>
+        </div>
+       
+        <!-- 课表具体信息结束 -->
+        <div class="show">
+            关于我的课程
+            <div class="card1">
+                <h4>操作系统</h4>
+                <p>叶俊民老师</p>
+                <p>教室：n108</p>
+            </div>
+             <div class="card2">
+                <h4>微机原理</h4>
+                <p>陈怡老师</p>
+                <p>教室：n535</p>
+            </div>
+            <div class="card3">
+                <h4>专业英语</h4>
+                <p>赵卫中老师</p>
+                <p>教室：n113</p>
+            </div>
+            <div class="card4">
+                <h4>编译原理</h4>
+                <p>郭京蕾</p>
+                <p>教室：n211</p>
+            </div>
+            <div class="card5">
+                <h4>信息检索</h4>
+                <p>张茂元</p>
+                <p>教室：n108</p>
+            </div>
+            <div class="card6">
+                <h4>操作系统</h4>
+                <p>叶俊民</p>
+                <p>教室：n108</p>
+            </div>
+            <div class="card7">
+                <h4>人工智能</h4>
+                <p>戴上平</p>
+                <p>教室：n113</p>
+            </div>
+            <div class="card8">
+                <h4>电影鉴赏</h4>
+                <p>林吉安</p>
+                <p>教室：8111</p>
+            </div>
+            <div class="card9">
+                <h4>博弈思维</h4>
+                <p>李名峰</p>
+                <p>教室：n201</p>
+            </div>
+            <div class="card10">
+                <h4>web程序设计</h4>
+                <p>涂新辉</p>
+                <p>教室：n108</p>
+            </div>
+            <div class="card11">
+                <h4>习近平思想</h4>
+                <p>吕惠东</p>
+                <p>教室：n213</p>
+            </div>
+        </div>
+    </div> 
+    <script>
+     /* 找元素---找对象 */
+    //  操作系统
+    var oInp = document.getElementsByClassName("item3-3");
+    var oDiv = document.getElementsByClassName("card1");
+    /* 操作元素---搞对象  */
+    /* 鼠标一上去之后 */
+    oInp[0].addEventListener('mouseover',function(){
+        
+        oDiv[0].style.display="block";
+    })
+    oInp[0].addEventListener('mouseout',function(){
+        
+        oDiv[0].style.display="none";
+    })
+    var oInp = document.getElementsByClassName("item2-5");
+    var oDiv = document.getElementsByClassName("card1");
+    /* 操作元素---搞对象  */
+    /* 鼠标一上去之后 */
+    oInp[0].addEventListener('mouseover',function(){
+        
+        oDiv[0].style.display="block";
+    })
+    oInp[0].addEventListener('mouseout',function(){
+        
+        oDiv[0].style.display="none";
+    })
+// 微机原理
+    var oInp2 = document.getElementsByClassName("item3-1");
+    var oDiv2 = document.getElementsByClassName("card2");
+    /* 操作元素---搞对象  */
+    /* 鼠标一上去之后 */
+
+    oInp2[0].addEventListener('mouseover',function(){
+        oDiv2[0].style.display="block";
+    })
+    oInp2[0].addEventListener('mouseout',function(){
+        
+        oDiv2[0].style.display="none";
+    })
+    var oInp2 = document.getElementsByClassName("item5-3");
+    var oDiv2 = document.getElementsByClassName("card2");
+    /* 操作元素---搞对象  */
+    /* 鼠标一上去之后 */
+
+    oInp2[0].addEventListener('mouseover',function(){
+        oDiv2[0].style.display="block";
+    })
+    oInp2[0].addEventListener('mouseout',function(){
+        
+        oDiv2[0].style.display="none";
+    })
+// 专业英语
+var oInp3 = document.getElementsByClassName("item5-1");
+    var oDiv3 = document.getElementsByClassName("card3");
+    /* 操作元素---搞对象  */
+    /* 鼠标一上去之后 */
+
+    oInp3[0].addEventListener('mouseover',function(){
+        oDiv3[0].style.display="block";
+    })
+    oInp3[0].addEventListener('mouseout',function(){
+        
+        oDiv3[0].style.display="none";
+    })
+// 编译原理
+var oInp4 = document.getElementsByClassName("item5-4");
+    var oDiv4 = document.getElementsByClassName("card4");
+    /* 操作元素---搞对象  */
+    /* 鼠标一上去之后 */
+
+    oInp4[0].addEventListener('mouseover',function(){
+        oDiv4[0].style.display="block";
+    })
+    oInp4[0].addEventListener('mouseout',function(){
+        
+        oDiv4[0].style.display="none";
+    })
+    var oInp4 = document.getElementsByClassName("item2-2");
+    var oDiv4 = document.getElementsByClassName("card4");
+    /* 操作元素---搞对象  */
+    /* 鼠标一上去之后 */
+
+    oInp4[0].addEventListener('mouseover',function(){
+        oDiv4[0].style.display="block";
+    })
+    oInp4[0].addEventListener('mouseout',function(){
+        
+        oDiv4[0].style.display="none";
+    })
+// 人工智能
+var oInp5 = document.getElementsByClassName("item2-3");
+    var oDiv5 = document.getElementsByClassName("card7");
+    /* 操作元素---搞对象  */
+    /* 鼠标一上去之后 */
+
+    oInp5[0].addEventListener('mouseover',function(){
+        oDiv5[0].style.display="block";
+    })
+    oInp5[0].addEventListener('mouseout',function(){
+        
+        oDiv5[0].style.display="none";
+    })
+// 电影鉴赏
+var oInp6 = document.getElementsByClassName("item4-3");
+    var oDiv6 = document.getElementsByClassName("card8");
+    /* 操作元素---搞对象  */
+    /* 鼠标一上去之后 */
+
+    oInp6[0].addEventListener('mouseover',function(){
+        oDiv6[0].style.display="block";
+    })
+    oInp6[0].addEventListener('mouseout',function(){
+        
+        oDiv6[0].style.display="none";
+    })
+// 博弈思维
+var oInp7 = document.getElementsByClassName("item6-3");
+    var oDiv7 = document.getElementsByClassName("card9");
+    /* 操作元素---搞对象  */
+    /* 鼠标一上去之后 */
+
+    oInp7[0].addEventListener('mouseover',function(){
+        oDiv7[0].style.display="block";
+    })
+    oInp7[0].addEventListener('mouseout',function(){
+        
+        oDiv7[0].style.display="none";
+    })
+// 习思想
+var oInp8 = document.getElementsByClassName("item3-4");
+    var oDiv8 = document.getElementsByClassName("card11");
+    /* 操作元素---搞对象  */
+    /* 鼠标一上去之后 */
+
+    oInp8[0].addEventListener('mouseover',function(){
+        oDiv8[0].style.display="block";
+    })
+    oInp8[0].addEventListener('mouseout',function(){
+        
+        oDiv8[0].style.display="none";
+    })
+// web
+var oInp9 = document.getElementsByClassName("item4-4");
+    var oDiv9 = document.getElementsByClassName("card10");
+    /* 操作元素---搞对象  */
+    /* 鼠标一上去之后 */
+
+    oInp9[0].addEventListener('mouseover',function(){
+        oDiv9[0].style.display="block";
+    })
+    oInp9[0].addEventListener('mouseout',function(){
+        
+        oDiv9[0].style.display="none";
+    })
+// 信息检索
+var oInp10 = document.getElementsByClassName("item5-2");
+    var oDiv10 = document.getElementsByClassName("card5");
+    /* 操作元素---搞对象  */
+    /* 鼠标一上去之后 */
+
+    oInp10[0].addEventListener('mouseover',function(){
+        oDiv10[0].style.display="block";
+    })
+    oInp10[0].addEventListener('mouseout',function(){
+        
+        oDiv10[0].style.display="none";
+    }) 
+  
+        </script>
+</body>
+</html>

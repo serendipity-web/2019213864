@@ -1,0 +1,214 @@
+.container{
+    width: 100%;
+    height: 1000px;
+    /* 布局：两栏n列 */
+    display: grid;
+    grid-template-columns: [h1] 50% [h2] 50% [h3];
+    grid-template-rows: [l1]70px [l2] 40px [l3] 40px [l4] 40px [l5] 40px[l6] 40px[l7] 40px[l8] auto[l9];
+    grid-gap: 1px;
+   
+    
+    
+}
+/* 对标题布局 */
+h2{
+    text-align: center;
+}
+.title
+{
+    grid-column-start: h1;
+    grid-column-end: h3;
+    grid-row-start: l1;
+    grid-row-end: l2;
+    background-color: beige;
+    display: block;
+    border: 2px solid white;
+    border-radius: 40px;
+    box-shadow: 20px 20px 20px black;
+}
+.course1{
+    grid-column-start: h1;
+    grid-column-end: h2;
+    grid-row-start: l2;
+    grid-row-end: l3;
+    background-color: coral;
+    border-radius: 5px;
+    display: grid;
+    gap: 2px;
+    grid-template-columns: [z1] 1fr [z2] 1fr[z3] 1fr[z4] 1fr[z5] 1fr[z6] 1fr[z7] 1fr[z8]
+      
+   
+}
+.course2{
+    grid-column-start: h1;
+    grid-column-end: h2;
+    grid-row-start: l3;
+    grid-row-end: l4;
+    background-color: coral;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-gap: 2px;
+}
+.course3{
+    grid-column-start: h1;
+    grid-column-end: h2;
+    grid-row-start: l4;
+    grid-row-end: l5;
+    background-color: coral;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-gap: 2px;
+}
+.course4{
+    grid-column-start: h1;
+    grid-column-end: h2;
+    grid-row-start: l5;
+    grid-row-end: l6;
+    background-color: coral;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-gap: 2px;
+}
+.course5{
+    grid-column-start: h1;
+    grid-column-end: h2;
+    grid-row-start: l6;
+    grid-row-end: l7;
+    background-color: coral;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-gap: 2px;
+    
+}
+.course6{
+    grid-column-start: h1;
+    grid-column-end: h2;
+    grid-row-start: l7;
+    grid-row-end: l8;
+    background-color: coral;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-gap: 2px;
+    
+}
+/* 课程介绍想以卡片形式介绍 */
+.show{
+    grid-column-start: h2;
+    grid-column-end: h3;
+    grid-row-start: l2;
+    grid-row-end: l8;
+    background-color: darkgray;
+}
+/* 卡片特效 */
+.card1,.card2,.card3,.card4,.card5,.card6,.card7,.card8,.card9,.card10,.card11  {
+    text-align: center;
+    width: 90%;
+    height: 29vh;
+    background-color: darkcyan;
+    border-radius: 2vh;
+    margin: 2vh;
+    
+    /* 文本垂直居中 */
+    /* text-align: center; */
+    /* line-height: 20vh; */
+
+    /*外层相对位置*/
+    /* position: relative; */
+
+    border-radius: 12px;
+    color: #f0e8e9;
+    display: none;
+    box-shadow: 20px 20px 60px black;
+    
+}
+/* .card2  {
+    text-align: center;
+    width: 90%;
+    height: 29vh;
+    background-color: darkcyan;
+    border-radius: 2vh;
+    margin: 2vh;
+    
+    /* 文本垂直居中 */
+    /* text-align: center; */
+    /* line-height: 20vh; */
+
+    /*外层相对位置*/
+    /* position: relative; */
+
+    border-radius: 12px;
+    color: #918a8b;
+    display: none;
+    box-shadow: 20px 20px 60px black;
+    
+} */
+/* 对单个课表进行设置 */
+.item1-1 .item2-1 .item3-1 .item4-1 .item5-1 .item6-1 .item7-1 
+{
+    grid-column-start: z1;
+    grid-column-end: z2;
+    
+    display: block;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.item1-2 .item2-2 .item3-2 .item4-2 .item5-2 .item6-2 .item7-2
+{
+    grid-column-start: z2;
+    grid-column-end: z3;
+    display: block;
+    border: 2px solid black;
+    
+    border-radius: 5px;
+}
+.item1-3 .item2-3 .item3-3 .item4-3 .item5-3 .item6-3 .item7-3
+{
+    grid-column-start: z3;
+    grid-column-end: z4;
+    display: block;
+    border: 2px solid black;
+    border-left: none ;
+    border-radius: 5px;
+}
+.item1-4 .item2-4 .item3-4 .item4-4 .item5-4 .item6-4 .item7-4
+{
+    grid-column-start: z4;
+    grid-column-end: z5;
+    display: block;
+    border: 2px solid black;
+    border-left: none ;
+    border-radius: 5px;
+}
+.item1-5 .item2-5 .item3-5 .item4-5 .item5-5 .item6-5 .item7-5
+{
+    grid-column-start: z5;
+    grid-column-end: z6;
+    display: block;
+    border: 2px solid black;
+    border-left: none ;
+    border-radius: 5px;
+}
+.item1-6 .item2-6 .item3-6 .item4-6 .item5-6 .item6-6 .item7-6
+{
+    grid-column-start: z6;
+    grid-column-end: z7;
+    display: block;
+    border: 2px solid black;
+    border-left: none ;
+    border-radius: 5px;
+}
+.item1-7 .item2-7 .item3-7 .item4-7 .item5-7 .item6-7 .item7-7
+{
+    grid-column-start: z7;
+    grid-column-end: z8;
+    display: block;
+    border: 2px solid black;
+    border-left: none ;
+    border-radius: 5px;
+}
+
