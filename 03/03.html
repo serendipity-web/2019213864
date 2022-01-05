@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="./css/01.css">
+</head>
+<body>
+    <!-- 1.画笔 -->
+    <div class="caidan">
+        <div class="btn" id="huabi" style="background-image: url(./image/画笔.png)"></div>
+        <div class="btn" id="rect">矩形</div>
+        <div class="btn" id="yuan">圆形</div>
+        <div class="btn1 line xi active"></div>
+        <div class="btn1 line normal"></div>
+        <div class="btn1 line cu"></div>
+        <div class="btn"><input type="color" id="color" name="" value="" ></div>
+    </div>
+    <!-- 浏览器宽度 -->
+    <canvas id="canvas" width=""></canvas>
+    <script type="text/javascript">
+        // 找到所有按钮
+        var allBtn = document.querySelectorAll(".btn")
+        //获取canvas属性
+       var canvas =  document.querySelector('#canvas');
+       //设置canvas宽高
+       var ctx = canvas.getContext('2d')
+       canvas.setAttribute("width",canvas.offsetWidth);
+       canvas.setAttribute("height",canvas.offsetHeight);
+        //定义画笔
+        // 定义画板
+        var huaban = {
+          type:"none",
+        //   类型为null
+          isDraw:false,
+          beginX:0,
+          beginY:0,
+          lineWidth:6,
+          imageData:null,
+          color:"#000",
+        //   绘制画笔
+          huabiFn:function(e){
+              var x=e.pageX-canvas.offsetLeft;
+              var y=e.pageY-canvas.offsetTop;
+              ctx.lineTo(x,y),
+              ctx.strokeStyle=huaban.color,
+              ctx.lineWidth=huaban.lineWidth;
+              ctx.lineCap="round",
+              ctx.lineJoin="round",
+              ctx.stroke()
+            //   菜单高度
+              
+              
+          },
+            //   矩形
+            rectFn:function(e){
+                var x=e.pageX-canvas.offsetLeft
+                var y=e.pageY-canvas.offsetTop
+                ctx.lineWidth=huaban.lineWidth;
+                ctx.strokeStyle=huaban.color;
+                // 清除之前内容
+                ctx.clearRect(0,0,canvas.offsetWidth,canvas.offsetHeight)
+                if(huaban.imageData!=null)
+                {
+                    ctx.putImageData(huaban.imageData,0,0,0,0,canvas.offsetWidth,canvas.offsetHeight)
+                }
+                ctx.beginPath()
+                ctx.rect(huaban.beginX,huaban.beginY,x-huaban.beginX,y-huaban.beginY);
+                ctx.stroke()
+                ctx.closePath()
+            },
+            // 圆形
+            yuanFn:function(e){
+                var x=e.pageX-canvas.offsetLeft
+                var y=e.pageY-canvas.offsetTop
+                ctx.lineWidth=huaban.lineWidth;
+                ctx.strokeStyle=huaban.color;
+                var r=0
+                // 清除之前内容
+                ctx.clearRect(0,0,canvas.offsetWidth,canvas.offsetHeight)
+                if(huaban.imageData!=null)
+                {
+                    ctx.putImageData(huaban.imageData,0,0,0,0,canvas.offsetWidth,canvas.offsetHeight)
+                }
+                r=Math.sqrt((x-huaban.beginX)*(x-huaban.beginX)+(y-huaban.beginY)*(y-huaban.beginY)),
+                ctx.beginPath()
+                ctx.arc(x,y,r,0,2*Math.PI),
+                ctx.stroke(),
+                ctx.closePath()
+            }
+            }
+// 定义画笔
+    var huabiBtn = document.querySelector("#huabi")
+// 画笔点击事件
+    huabiBtn.onclick = function(){
+        allBtn.forEach(function(item,i){
+            item.classList.remove("active")
+        })
+        huabiBtn.classList.add("active")
+        huaban.type = "huabi"
+    }
+// 定义矩形
+    var rectBtn = document.querySelector("#rect")
+// 矩形点击事件
+    rectBtn.onclick = function(){
+        allBtn.forEach(function(item,i){
+            item.classList.remove("active")
+        })
+        rectBtn.classList.add("active");
+        huaban.type="rect"
+        
+    }
+//定义圆形
+var yuanBtn = document.querySelector("#yuan")
+// 圆形点击
+yuanBtn.onclick = function(){
+        allBtn.forEach(function(item,i){
+            item.classList.remove("active")
+        })
+        yuanBtn.classList.add("active");
+        huaban.type="yuan"
+       
+    }
+// 设置粗细按钮
+var lineDivs = document.querySelectorAll(".line")
+lineDivs.forEach(function(item,i){
+    item.onclick = function(){
+        lineDivs.forEach(function(a,b)
+        {
+            a.classList.remove("active")
+        }
+        )
+        item.classList.add("active")
+        if(i==0){
+            huaban.lineWidth=6;
+        }else if(i==1)
+        {
+            huaban.lineWidth=16
+            
+        }else{
+            huaban.lineWidth=32;
+        }
+    }
+})
+// 监听颜色设置
+var colorInput = document.querySelector('#color')
+colorInput.onchange = function(e){
+    // console.log(e)
+    console.log(colorInput.value)
+    huaban.color=colorInput.value;
+    console.log(huaban.color)
+}
+// 鼠标按下
+canvas.onmousedown = function(e){
+    huaban.isDraw= true
+    if(huaban.type == 'rect'){
+        var x=e.pageX-canvas.offsetLeft;
+        var y=e.pageY-canvas.offsetTop;
+        huaban.beginX=x;
+        huaban.beginY=y;
+       
+    }
+    if(huaban.type == 'yuan'){
+        var x=e.pageX-canvas.offsetLeft;
+        var y=e.pageY-canvas.offsetTop;
+        huaban.beginX=x;
+        huaban.beginY=y;
+       
+    }
+    if(huaban.type=='huabi'){
+        var x=e.pageX-canvas.offsetLeft;
+        var y=e.pageY-canvas.offsetTop;
+        huaban.beginX=x;
+        huaban.beginY=y;
+        ctx.beginPath()
+        ctx.moveTo(x,y)
+    }
+
+  
+}
+// 鼠标抬起
+canvas.onmouseup=function(e){
+    huaban.imageData=ctx.getImageData(0,0,canvas.offsetWidth,canvas.offsetHeight)
+    huaban.isDraw = false;
+    // 设置关闭
+    if(huaban.type == "huabi")
+    {
+        ctx.closePath()
+    }
+
+}
+canvas.onmousemove= function(e){
+    if(huaban.isDraw)
+    {
+        var strFn=huaban.type+'Fn';
+        huaban[strFn](e)
+    }
+}
+
+    </script>
+</body>
+</html>
